@@ -18,6 +18,8 @@ class AccessToken:
         try:
             response = requests.post("https://accounts.zoho.com/oauth/v2/token", data=body)
             data = response.json()
+            print(response.status_code)
+            print(response.text)
             access_token = data["access_token"]
             self.desk_access_token = access_token
             print(self.desk_access_token)
